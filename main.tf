@@ -18,38 +18,38 @@ module "ingress_nginx" {
 
 module "gitlab" {
   source = "./modules/gitlab"
-  domain = var.gitlab_domain
-  external_ip = var.gitlab_external_ip
-  email = var.gitlab_email
-  root_password = var.gitlab_root_password
-  secret_key = var.gitlab_secret_key
+  gitlab_domain = var.gitlab_domain
+  gitlab_external_ip = var.gitlab_external_ip
+  gitlab_email = var.gitlab_email
+  gitlab_root_password = var.gitlab_root_password
+  gitlab_secret_key = var.gitlab_secret_key
 }
 
 module "grafana" {
   source = "./modules/grafana"
-  admin_password = var.grafana_admin_password
+  grafana_admin_password = var.grafana_admin_password
 }
 
 module "jenkins" {
   source = "./modules/jenkins"
-  admin_password = var.jenkins_admin_password
+  jenkins_admin_password = var.jenkins_admin_password
 }
 
 module "minio" {
   source = "./modules/minio"
-  access_key = var.minio_access_key
-  secret_key = var.minio_secret_key
+  minio_access_key = var.minio_access_key
+  minio_secret_key = var.minio_secret_key
 }
 
 module "postgresql" {
   source = "./modules/postgresql"
-  password = var.postgres_password
-  database = var.postgres_database
+  postgres_password = var.postgres_password
+  postgres_database = var.postgres_database
 }
 
 module "redis" {
   source = "./modules/redis"
-  password = var.redis_password
+  redis_password = var.redis_password
 }
 
 module "elk" {
